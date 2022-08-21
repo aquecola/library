@@ -356,5 +356,6 @@ git config pull.ff only       # fast-forward only
  #python
 
 a = int(input()) - приглашение на ввод переменной
-print () - вывести на экран
+module pyinstaller
+pyinstaller -F test.py - перекомпелировать программу в .exe
 
