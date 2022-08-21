@@ -88,11 +88,7 @@ async def _load(ctx:commands.Context, ext_name:str):
         await ctx.send('Ошибка перезагрузки расширения')
 
 
-@bot.command(
-    name='ping'
-)
-async def _ping(ctx:commands.Context):
-    return await ctx.send(f'Bot ping is {int(bot.latency*1000)} ms')
+
 
 
 
