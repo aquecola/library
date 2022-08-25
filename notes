@@ -359,3 +359,22 @@ a = int(input()) - приглашение на ввод переменной
 module pyinstaller
 pyinstaller -F test.py - перекомпелировать программу в .exe
 
+ #docker 
+
+installation:
+
+sudo snap install docker
+sudo groupadd docker - create the docker group
+sudo usermod -aG docker $USER - add your user to the docker group
+newgrp docker
+
+commom commands:
+
+docker pull - download image
+docker images - cheking existing images 
+docker run - start container
+docker ps - show all working containers rn
+docker ps -a - show all containers which started in a past
+docker run -it busybox sh - starting shell of current container 
+docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
+docker run -p 8888:80 'name' - run image on port 8888:80
