@@ -12,11 +12,9 @@ weather = observation.weather
 
 temp = int(weather.temperature('celsius')['temp'])
 feels_like = int(weather.temperature('celsius')['feels_like'])
+humidity = weather.humidity
+speed = weather.wind()['speed']
 
 print("Температура:" + str(temp))
-
-if feels_like > 25:
-    print('Пиздец как жарко')
-
-if feels_like < 5:
-    print('Пиздец как холодно')
+print("Влажность:" + str(humidity) + "%")
+print("Скорость ветра:" + str(speed) + "м/с")

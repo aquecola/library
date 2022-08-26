@@ -9,9 +9,9 @@ class Ping(commands.Cog):
         self.bot = bot
 
 @commands.command(
-    name = ping
+    name = weather
 )
-    async def _ping(self, ctx:commands.Context):
+    async def _weather(self, ctx:commands.Context):
         return await ctx.send(f'Bot ping is {int(self.bot.latency*1000)} ms')
 
 
