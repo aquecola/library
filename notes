@@ -307,6 +307,12 @@ sudo ss -tulpn
 
  #---#
 
+ #linux
+
+ pstree - show all demons
+ sudo service restart
+ sudo systemctl restart
+
  #git
 
 Конфигурация находится в директории "Home" на Linux, называется .gitconfig
@@ -378,3 +384,24 @@ docker ps -a - show all containers which started in a past
 docker run -it busybox sh - starting shell of current container 
 docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
 docker run -p 8888:80 'name' - run image on port 8888:80
+
+ #jenkins
+
+installation:
+
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+sudo ufw allow 8080 - to ope the port
+sudo ufw allow OpenSSH
+sudo ufw enable - to enable firewall if it is innactive
+sudo ufw status
+
+how to change HTTP port:
+
+vim /etc/default/jenkins (for Debian/Ubuntu)
+vim /etc/sysconfig/jenkins (for CentOS)
+
