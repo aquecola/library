@@ -309,9 +309,17 @@ sudo ss -tulpn
 
  #linux
 
- pstree - show all demons
- sudo service restart
- sudo systemctl restart
+usefull tools and commands:
+
+pstree - show all demons
+sudo service restart
+sudo systemctl restart
+free -m - check free ram
+htop - nice tool for monitoring sys, it's like 'windows' task manager
+
+how to generate ssh key: 
+
+
 
  #git
 
