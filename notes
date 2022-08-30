@@ -416,3 +416,6 @@ how to change HTTP port:
 vim /etc/default/jenkins (for Debian/Ubuntu)
 vim /etc/sysconfig/jenkins (for CentOS)
 
+ #nginx
+
+sudo nginx -t - check configuration files
