@@ -14,3 +14,4 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 - [Bash scripting cheatsheet](https://devhints.io/bash)
 - [Go cheatsheet](https://devhints.io/go)
 - [APACHE docs](https://httpd.apache.org/docs/2.4/)
+- [NGINX docs](https://nginx.org/en/docs/)
