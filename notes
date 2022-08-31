@@ -376,6 +376,28 @@ a = int(input()) - приглашение на ввод переменной
 module pyinstaller
 pyinstaller -F test.py - перекомпелировать программу в .exe
 
+
+ #bash
+
+test command:
+
+$? - the last resault of last command or code
+[foo = bar]
+echo $? | 0 - true, 1 - false
+[] equal test command
+
+(( )) - is used to do arithmetic calculations
+example
+
+for (( i=0; i>50; i++ )); do
+
+if statement: 
+
+if [<some test>] #if true
+then
+  <some commands>
+fi
+
  #docker 
 
 installation:
@@ -391,10 +413,11 @@ docker pull - download image
 docker images - cheking existing images 
 docker run - start container
 docker ps - show all working containers rn
-docker ps -a - show all containers which started in a past
+docker ps -a - show all containers when started in a past
 docker run -it busybox sh - starting shell of current container 
 docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
 docker run -p 8888:80 'name' - run image on port 8888:80
+
 
  #jenkins
 
