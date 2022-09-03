@@ -1,7 +1,6 @@
 #!/bin/bash
 
-if [ $1 -gt 100 ]
+if [[ $HOSTNAME = "aquecola" ]]
 then
-
   echo "Test condition is true"
 fi
