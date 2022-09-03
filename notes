@@ -323,6 +323,11 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)" - show existing ssh keys
 ssh-add ~/.ssh/id_ed25519 - add ssh private key to the ssh-agent
 
+ #linux_and_apps_problems
+
+Failed to start LSB: VirtualBox Linux kernel module
+solution:
+disable secure boot in bios
 
  #git
 
