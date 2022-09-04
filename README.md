@@ -4,6 +4,10 @@
 <p align="center">
 
 Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap)
+
+# Devops Tasks
+
+![image](https://user-images.githubusercontent.com/81821381/188335701-68886c27-65b4-468c-ad54-b86687a1da1f.png)
   
 # Helpful materials
   
