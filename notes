@@ -447,3 +447,26 @@ vim /etc/sysconfig/jenkins (for CentOS)
  #nginx
 
 sudo nginx -t - check configuration files
+
+ #vagrant
+
+vagrant init *author/box - add vagrant configuration and create new evironment, discover vagrant boxes here - https://app.vagrantup.com/boxes/search
+vagrant up - start virtual machine
+vagrant halt - stop virtual machine
+vagrant ssh - connects to machine via ssh
+vagrant ssh-config - outputs OpenSSH valid configuration to connect to machine
+
+config example for vagrant virtual machine:
+
+Vagrant.configure(2) do |config|
+config.vm.box = "bento/ubuntu-18.04"
+config.vm.box_check_update = false
+config.vm.provider "virtualbox" do |vb|
+vb.name = "ubuntu-1804-test"
+vb.memory = 2048
+vb.cpus = 1
+  end
+  
+config.vm.hostname = "ubuntu-1804-test"
+config.vm.network "public_network"
+end
