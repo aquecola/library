@@ -469,4 +469,8 @@ vb.cpus = 1
   
 config.vm.hostname = "ubuntu-1804-test"
 config.vm.network "public_network"
+config.ssh.username = "vagrant"
+config.ssh.password = "vagrant"
+
 end
+!!!
