@@ -474,3 +474,11 @@ config.ssh.password = "vagrant"
 
 end
 !!!
+
+ #nmcli
+
+nmcli con add type tun/eth/etc ifname *interface*
+nmcli con mod *name* ipv4.address 0.0.0.0/0
+nmcli con mod *name* ipv4.method manual/auto (no dhcp, dhcp)
+nmcli con mod *name* ipv4.routes 0.0.0.0/0 (dst)
+
