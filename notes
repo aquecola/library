@@ -323,6 +323,9 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)" - show existing ssh keys
 ssh-add ~/.ssh/id_ed25519 - add ssh private key to the ssh-agent
 
+apt-cache policy | grep http | awk '{print $2 $3}' | sort -u - show all ppa repositories
+sudo add-apt-repository ppa: $$ - add repository
+
  #linux_and_apps_problems
 
 Failed to start LSB: VirtualBox Linux kernel module
