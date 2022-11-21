@@ -329,6 +329,12 @@ apt-cache policy | grep http | awk '{print $2 $3}' | sort -u - show all ppa repo
 sudo add-apt-repository $$ ppa: $$ - add repository
 /etc/apt/sources.list - all installed repositories
 
+firewall allow port:
+
+sudo ufw enable
+sudo ufw allow 1716:1764/tcp
+sudo ufw allow 1716:1764/udp
+
  #linux_and_apps_problems
 
 Failed to start LSB: VirtualBox Linux kernel module
@@ -440,7 +446,7 @@ sudo apt update
 sudo apt install jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
-sudo ufw allow 8080 - to ope the port
+sudo ufw allow 8080 - to open the port
 sudo ufw allow OpenSSH
 sudo ufw enable - to enable firewall if it is innactive
 sudo ufw status
@@ -487,4 +493,8 @@ nmcli con add type tun/eth/etc ifname *interface*
 nmcli con mod *name* ipv4.address 0.0.0.0/0
 nmcli con mod *name* ipv4.method manual/auto (no dhcp, dhcp)
 nmcli con mod *name* ipv4.routes 0.0.0.0/0 (dst)
+
+ #nmap
+
+nmap -sP 192.168.3.0/24 - describe and show all available hosts in network
 
