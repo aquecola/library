@@ -497,8 +497,13 @@ nmcli con mod *name* ipv4.routes 0.0.0.0/0 (dst)
  #nmap
 
 nmap -sP 192.168.3.0/24 - describe and show all available hosts in network
+nmap -sT 192.168.3.2 - show all open ports
 
  #ufw
 
 ufw allow 1716:1764/tcp
 ufw allow 1716:1764/udp - open port
+
+ #firewall (CentOS/Fedora)
+
+firewall-cmd --permanent --zone=public --add-port=22/tcp
