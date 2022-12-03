@@ -307,6 +307,33 @@ sudo ss -tulpn
 
  #---#
 
+ #windows
+
+ssh-server:
+
+dism /Online /Add-Capability /CapabilityName:OpenSSH.Server~~~~0.0.1.0 - install ssh-server
+
+C:\Programdata\ssh\sshd_config - main ssh config
+DenyGroups Users
+AllowGroups Administrators
+
+| DenyUsers AllowUsers |
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::Security>
+Run choco install -y nano - install nano-win for Windows
+
+https://ftp.nluug.nl/pub/vim/pc/gvim82.exe - download vim installer for windows
+
+cmd help:
+
+dir - show all files in current directory
+type - show
+rd - delete directory
+del - delete file
+systeminfo
+tasklist
+
+
  #linux
 
 usefull tools and commands:
@@ -315,7 +342,11 @@ pstree - show all demons
 sudo service restart
 sudo systemctl restart
 free -m - check free ram
-htop - nice tool for monitoring sys, it's like 'windows' task manager
+htop - nice tool for monitoring sys, like 'windows' task manager
+uname -a - show linux version
+wget https://git.io/vpn -O openvpn-install.sh - the fastest way for install openVPN-server through the script
+
+
 
 how to generate ssh key: 
 
