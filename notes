@@ -324,6 +324,13 @@ Run choco install -y nano - install nano-win for Windows
 
 https://ftp.nluug.nl/pub/vim/pc/gvim82.exe - download vim installer for windows
 
+https://winitpro.ru/index.php/2015/09/02/neskolko-rdp-sessij-v-windows-10/ - how to create windows 10 into terminal server
+
+how to add user through cmd/powershell:
+
+net user "user_name" "password" /add
+net localgroup Administrators admin /add
+
 cmd help:
 
 dir - show all files in current directory
