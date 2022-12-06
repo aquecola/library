@@ -313,6 +313,8 @@ ssh-server:
 
 dism /Online /Add-Capability /CapabilityName:OpenSSH.Server~~~~0.0.1.0 - install ssh-server
 
+ssh-add "C:\Users\user\.ssh\id_ed25519" - add rsa key
+
 C:\Programdata\ssh\sshd_config - main ssh config
 DenyGroups Users
 AllowGroups Administrators
@@ -353,7 +355,12 @@ htop - nice tool for monitoring sys, like 'windows' task manager
 uname -a - show linux version
 wget https://git.io/vpn -O openvpn-install.sh - the fastest way for install openVPN-server through the script
 
+/etc/environment, /etc/profile - $PATH file
 
+how to use ssh key: (v2)
+
+ssh-keygen - generate ssh key
+ssh-copy-id *server* - copy your ssh id on server
 
 how to generate ssh key: 
 
@@ -452,6 +459,11 @@ if [<some test>] #if true
 then
   <some commands>
 fi
+
+
+ #powershell
+
+Set-Service -Name sshd -StartupType 'Automatic'
 
  #docker 
 
