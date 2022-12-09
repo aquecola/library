@@ -557,3 +557,35 @@ ufw allow 1716:1764/udp - open port
  #firewall (CentOS/Fedora)
 
 firewall-cmd --permanent --zone=public --add-port=22/tcp
+
+ #zabbix
+
+https://www.zabbix.com/ru/download?zabbix=6.2&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=mysql&ws=apache
+ #mysql
+
+apt install mysql-server
+mysql_secure_installation
+
+
+mysql for zabbix:
+
+
+mysql -uroot -p
+
+CREATE DATABASE zabbix CHARACTER SET utf8 COLLATE utf8_bin;
+CREATE USER 'aquecola'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL ON zabbix.* TO 'aquecola'@'localhost';
+FLUSH PRIVILEGES;
+zcat /usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz | mysql -u aquecola -p zabbix
+vim /etc/zabbix/zabbix_server.conf - server config for zabbix-server
+
+
+---
+
+ #apache2
+
+sudo a2enmod rewrite - turn on rewrite module
+
+a2ensite - activate virtual host
+a2dissite - deactivate virtual host
+/etc/apache2/sites-available - virtual hosts
