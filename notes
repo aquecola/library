@@ -264,6 +264,10 @@ WantedBy=multi-user.target
  sudo systemctl enable myscript.service
 
  sudo chmod u+x /usr/local/bin/script
+
+[Service]
+Restart=always
+RestartSec=30
  
  #---#
 
@@ -623,6 +627,18 @@ ip.host/setup.php - install zabbix server
 
 https://github.com/ableev/Zabbix-in-Telegram
 https://serveradmin.ru/nastroyka-opoveshheniy-zabbix-v-telegram/
+
+ #zabbix-features
+
+How to do trigger through tg-bot:
+
+1.[ITEM] Configuration >> Hosts >> Items >> Create Items >> Choose Key (for example proc.num) >> Add it and check this in "Latest data monitor"
+2.[TRIGGER] Configuration >> Hosts >> Triggers >> Create Trigger >> Add expression [Item] >> Add it
+3.[ACTIONS] Configuration >> Action >> Trigger Actions >> Add new condition
+
+DONE
+
+--
 
  #mysql
 
