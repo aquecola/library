@@ -561,6 +561,11 @@ nmap -sT 192.168.3.2 - show all open ports
 
 ufw allow 1716:1764/tcp
 ufw allow 1716:1764/udp - open port
+vim /etc/default/ufw - config for ufw
+ufw allow from 79.137.196.193 to any port 22
+ufw allow from 176.53.193.30 to any port 22
+ufw allow in on eth0 to any port 80
+ufw status numbered
 
  #firewall (CentOS/Fedora)
 
