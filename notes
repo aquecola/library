@@ -445,7 +445,7 @@ git config --global --edit
 a = int(input()) - приглашение на ввод переменной
 module pyinstaller
 pyinstaller -F test.py - перекомпелировать программу в .exe
-
+friends = ['Сергей', 'Соня', 'Дима', 'Алина', 'Егор'] - massives
 
  #bash
 
