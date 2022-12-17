@@ -359,6 +359,8 @@ htop - nice tool for monitoring sys, like 'windows' task manager
 uname -a - show linux version
 wget https://git.io/vpn -O openvpn-install.sh - the fastest way for install openVPN-server through the script
 
+&> /dev/null &
+
 /etc/environment, /etc/profile - $PATH file
 
 how to use ssh key: (v2)
