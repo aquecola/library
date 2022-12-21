@@ -572,6 +572,8 @@ ufw status numbered
  #firewall (CentOS/Fedora)
 
 firewall-cmd --permanent --zone=public --add-port=22/tcp
+firewall-cmd --list-all
+firewall-cmd --zone=public --add-source 0.0.0.0 --permanent
 
  #zabbix installation
 
@@ -675,3 +677,20 @@ sudo a2enmod rewrite - turn on rewrite module
 a2ensite - activate virtual host
 a2dissite - deactivate virtual host
 /etc/apache2/sites-available - virtual hosts
+
+ #ansible
+
+/etc/ansible/hosts
+
+[linux]
+
+0.0.0.0
+0.0.0.0
+
+[linux:vars]
+
+ansible_user=root
+ansible_password=root
+
+ansible linux -m ping - using ansible
+ansible linux -a "cat /etc/os-release"
