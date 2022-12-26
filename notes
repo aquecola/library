@@ -574,6 +574,10 @@ ufw status numbered
 firewall-cmd --permanent --zone=public --add-port=22/tcp
 firewall-cmd --list-all
 firewall-cmd --zone=public --add-source 0.0.0.0 --permanent
+firewall-cmd --zone=public --add-forward-port=port=2223:proto=tcp:toport=22 - port forwarding
+firewall-cmd --zone=public --add-masquerade
+firewall-cmd --zone=publiс --add-forward-port=port=2223:proto=tcp:toport=22:toaddr=192.168.56.4 - port forwarding to another machine 
+
 
  #zabbix installation
 
