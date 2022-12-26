@@ -3,6 +3,8 @@ notes.save.1
 notes.save.2
 notes.save.3
 notes.save.4
+notes.save.5
+Server.rar
 devops_plan.pdf
 client-03.ovpn
 client-01.ovpn
@@ -13,3 +15,8 @@ Programming/Python/code/__pycache__/
 .notes.swp
 .notes.swo
 .gitignore.swp
+Programming/Bash/code/.if.with.[].operator.sh.swp
+.gitingnore.swp
+.gitignore.swo
+Programming/Python/code/nextcord_project/.env
+Programming/Python/code/weather.bot.discord/.env
