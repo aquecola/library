@@ -585,6 +585,21 @@ firewall-cmd --zone=public --add-forward-port=port=2223:proto=tcp:toport=22 - po
 firewall-cmd --zone=public --add-masquerade
 firewall-cmd --zone=publiс --add-forward-port=port=2223:proto=tcp:toport=22:toaddr=192.168.56.4 - port forwarding to another machine 
 
+ #iptables
+
+basic iptables configuration:
+
+ss -ntulp - show all listen ports
+
+iptables -nvL --line-numbers - show all rules
+iptables -A INPUT -p tcp --dport=22 -d *dest ip address* -j ACCEPT
+iptables -I INPUT -p tcp -m state --state NEW -s *source address* --dport=22 -j ACCEPT
+iptables -t filter -D INPUT 6 - delete rule in filter
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -P INPUT DROP
+
+service iptables save - #save rules
 
  #zabbix installation
 
