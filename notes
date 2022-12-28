@@ -720,3 +720,10 @@ ansible_password=root
 
 ansible linux -m ping - using ansible
 ansible linux -a "cat /etc/os-release"
+
+ #bluetooth
+
+apt install blueman
+apt install wireplumber
+apt install libspa-0.2-bluetooth
+sudo systemctl restart bluetooth
