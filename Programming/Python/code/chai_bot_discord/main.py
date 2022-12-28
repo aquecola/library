@@ -5,28 +5,32 @@ from nextcord.ext import commands
 from dotenv import load_dotenv, find_dotenv
 import os
 
-load_dotenv(find_dotenv())
-
-intents = nextcord.Intents.default()
-intents.members = True
-intents.message_content = True
-
-bot = commands.Bot(command_prefix="$", intents=intents)
-
-@bot.event
-async def on_ready():
-    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
-    get_channel(1053405191388528710)
-    await 
+from nextcord.ext import commands, tasks
 
 
+class Bot(commands.Bot):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-#@bot.command()
-#@bot.slash_command(description="Создать канал")
-#async def ticket(ctx, member, name):
-#  await create_text_channel(name = f'{member}', subject = "test channel")
+        # an attribute we can access from our task
+        self.counter = 0
+
+        # start the task to run in the background
+        self.my_background_task.start()
+        intents = nextcord.Intents.default()
+
+    @tasks.loop(seconds=60)  # task runs every 60 seconds
+    async def my_background_task(self):
+        channel = self.get_channel(1057720328182308966)  # channel ID goes here
+        self.counter += 1
+        players = len(channel.members)
+        print(channel.members.)
+        await channel.edit(name='Sanya5555')
+        await channel.send(players)
+    @my_background_task.before_loop
+    async def before_my_task(self):
+        await self.wait_until_ready()  # wait until the bot logs in
 
 
-
-
-bot.run(os.environ.get('TOKEN'))
+bot = Bot()
+bot.run("OTU5ODU2Mjc3MzczMTk4MzU2.GhjpIO.4XT8Ud9RxSWVsxRaFmljiX36YtehNi0vZv5vG0")
