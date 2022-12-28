@@ -349,6 +349,13 @@ tasklist
 
  #linux
 
+ls -a
+df - check memory disc
+df -i - check inodes
+du - check memory directory
+mount
+LA(load average) == amount of cores - OK
+
 usefull tools and commands:
 
 pstree - show all demons
