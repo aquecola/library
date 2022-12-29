@@ -503,6 +503,11 @@ docker run -d -P --name static-site prakhar1989/static-site - starting web site 
 docker run -p 8888:80 'name' - run image on port 8888:80
 
 
+ #docker-compose:
+
+docker-compose up -d - up all containers
+
+
  #jenkins
 
 installation:
