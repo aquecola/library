@@ -489,10 +489,8 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 installation:
 
-sudo snap install docker
-sudo groupadd docker - create the docker group
-sudo usermod -aG docker $USER - add your user to the docker group
-newgrp docker
+apt install docker docker.io
+
 
 commom commands:
 
@@ -513,6 +511,15 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 
 
  #docker-compose:
+
+install:
+
+COMVER=2.14.2
+curl -L "https://github.com/docker/compose/releases/download/v$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+docker-compose --version
+
+--
 
 docker-compose up -d - up all containers
 
@@ -767,3 +774,8 @@ apt install blueman
 apt install wireplumber
 apt install libspa-0.2-bluetooth
 sudo systemctl restart bluetooth
+
+ #wireguard
+
+wg-quick up wg0
+wg-quick down wg0
