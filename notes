@@ -355,6 +355,9 @@ df -i - check inodes
 du - check memory directory
 mount
 LA(load average) == amount of cores - OK
+dig - DNS lookup and display server answer
+dhclient  -r - get new ip from DHCP
+cat /var/log/boot.log - bootlog info
 
 usefull tools and commands:
 
@@ -498,9 +501,15 @@ docker images - cheking existing images
 docker run - start container
 docker ps - show all working containers rn
 docker ps -a - show all containers when started in a past
+docker rm - delete container
+docker ps -a -f status=exited
+
 docker run -it busybox sh - starting shell of current container 
 docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
 docker run -p 8888:80 'name' - run image on port 8888:80
+
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 
  #docker-compose:
@@ -581,7 +590,7 @@ ufw allow from 176.53.193.30 to any port 22
 ufw allow in on eth0 to any port 80
 ufw status numbered
 
- #firewall (CentOS/Fedora)
+ #firewalld (CentOS/Fedor)
 
 firewall-cmd --permanent --zone=public --add-port=22/tcp
 firewall-cmd --list-all
@@ -591,6 +600,8 @@ firewall-cmd --zone=public --add-masquerade
 firewall-cmd --zone=publiс --add-forward-port=port=2223:proto=tcp:toport=22:toaddr=192.168.56.4 - port forwarding to another machine 
 
  #iptables
+
+yum install iptables-services
 
 basic iptables configuration:
 
@@ -605,6 +616,30 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -P INPUT DROP
 
 service iptables save - #save rules
+
+
+ #nf_tables
+
+iptables-translate #
+
+
+nft list table ip filter 
+nft flush ruleset
+nft add table ip filter 
+nft 'add chain ip filter input { type filter hook input priority 0 ; }'
+nft add rule ip filter input tcp dport 22 counter accept
+nft add rule ip filter input tcp dport {80, 443} counter accept
+nft add rule ip filter input ct state related, established counter
+nft add rule ip filter input iifname "lo" counter accept
+nft add rule ip filter input ip protocol icmp counter accept
+
+nft 'chain ip filter input { policy drop ; }'
+
+echo "flush ruleset" > /etc/nftables.conf
+nft -s list ruleset >> /etc/nftables.conf
+
+ip saddr *ip address* tcp dport 22 counter accept
+
 
  #zabbix installation
 
