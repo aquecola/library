@@ -22,3 +22,13 @@ Programming/Python/code/nextcord_project/.env
 Programming/Python/code/weather.bot.discord/.env
 Programming/Bash/code/.if.with.[].operator.sh.swp
 Programming/Python/code/chai_bot_discord/.env
+Docker/docker_wireguard/config
+Docker/docker_prometheus_stack/data
+Docker/docker_prometheus_stack/alertmanager/data
+Docker/docker_prometheus_stack/grafana/alerting
+Docker/docker_prometheus_stack/grafana/csv
+Docker/docker_prometheus_stack/grafana/file-collections
+Docker/docker_prometheus_stack/grafana/grafana.db
+Docker/docker_prometheus_stack/grafana/plugins
+Docker/docker_prometheus_stack/grafana/png
+Docker/docker_prometheus_stack/grafana/provisioning
