@@ -431,6 +431,9 @@ git config pull.ff only       # fast-forward only
 git config --edit
 git config --global --edit
 
+git submodule add git@github.com:aquecola/docker_prometheus_stack.git Docker/docker_prometheus_stack # create submodule
+
+
  #---#
 
  #SDLC
@@ -636,7 +639,7 @@ nft add table ip filter
 nft 'add chain ip filter input { type filter hook input priority 0 ; }'
 nft add rule ip filter input tcp dport 22 counter accept
 nft add rule ip filter input tcp dport {80, 443} counter accept
-nft add rule ip filter input ct state related, established counter
+nft add rule ip filter input ct state related, established counter accept
 nft add rule ip filter input iifname "lo" counter accept
 nft add rule ip filter input ip protocol icmp counter accept
 
