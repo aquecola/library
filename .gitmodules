@@ -1,0 +1,3 @@
+[submodule "Automatization Tools/ssh-copy-id.sh"]
+	path = Automatization Tools/ssh-copy-id.sh
+	url = git@github.com:aquecola/ssh-copy-id.sh.git
