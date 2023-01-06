@@ -349,8 +349,11 @@ tasklist
 
  #linux
 
+fdisk -l  #show all mounted disks
+lsblk
+ 
 ls -a
-df - check memory disc
+df -h  #check memory disc
 df -i - check inodes
 du - check memory directory
 mount
@@ -770,6 +773,7 @@ ansible_password=root
 
 ansible linux -m ping - using ansible
 ansible linux -a "cat /etc/os-release"
+ansible-playbook *yaml file*
 
  #bluetooth
 
