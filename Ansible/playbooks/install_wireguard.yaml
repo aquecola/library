@@ -1,0 +1,13 @@
+---
+  - name: install_wireguard
+    hosts: Linux2
+    tasks:
+      - name: Update all packages to their latest version
+        apt:
+          name: "*"
+          state: latest
+      - name: Clone a repo with separate git directory
+        ansible.builtin.git:
+          repo: https://github.com/aquecola/docker_wireguard.git
+          dest: /root/docker_wireguard
+          separate_git_dir: /root/docker_wireguard.git

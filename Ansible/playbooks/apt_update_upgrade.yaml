@@ -1,0 +1,8 @@
+---
+  - name: upgrade_os
+    hosts: Linux
+    tasks:
+      - name: Update all packages to their latest version
+        apt:
+          name: "*"
+          state: latest
