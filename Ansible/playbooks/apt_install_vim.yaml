@@ -1,0 +1,6 @@
+---
+  - name: install vim
+    hosts: Linux
+    tasks:
+      - name: apt install
+        apt:  name=vim state=latest #absent to uninstall, latest to install

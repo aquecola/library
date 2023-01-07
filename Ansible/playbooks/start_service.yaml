@@ -1,0 +1,11 @@
+---
+  - name: copy_file
+    hosts: Linux
+    
+    vars:
+      source_file: ~/knowledge_progress/Ansible/playbooks/test
+      destination_file: /root
+    
+    tasks:      
+      - name: Start etc Service
+        service: name:nginx state=started enables=yes

@@ -1,0 +1,16 @@
+---
+  - name: copy_file
+    hosts: Linux
+    
+    vars:
+      source_file: ~/knowledge_progress/Ansible/playbooks/test
+      destination_file: /root
+
+    tasks:
+      - name: Copy File to Servers
+        copy: src={{ source_file }} dest={{ destination_file }} mode=0555
+
+      #- name: Start etc Service
+      #  service: name:nginx state=started enables=yes
+
+
