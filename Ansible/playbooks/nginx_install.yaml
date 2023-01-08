@@ -1,0 +1,17 @@
+---
+  - name: nginx
+    hosts: Linux2
+    tasks:
+      - name: install nginx
+        apt:  name=nginx state=latest
+        
+        
+      - name: start nginx  
+        service: name=nginx state=started enabled=yes
+        notify: Restart nginx
+
+
+
+    handlers:
+    - name: Restart nginx
+      service: name=nginx state=restarted

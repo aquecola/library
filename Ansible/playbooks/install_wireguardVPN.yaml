@@ -1,0 +1,48 @@
+---
+  - name: install_wireguardVPN
+    hosts: Linux2
+    
+    vars:
+      source_file: ~/knowledge_progress/Ansible/playbooks/docker-compose.yml
+      destination_file: /root
+    
+    tasks:
+      
+      - name: install docker
+        apt:
+          update_cache: yes
+          name: docker
+          state: latest
+      
+      - name: install docker.io
+        apt:
+          name: docker.io
+          state: latest
+
+      - name: Install docker-compose
+        get_url: 
+          url : https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-Linux-x86_64
+          dest: /usr/local/bin/docker-compose
+          mode: 'u+x,g+x'
+      
+      - name: Install python pip3
+        apt:
+          name: python3-pip
+          state: latest
+
+      - name: Install pip docker
+        pip:
+          name: docker
+          state: latest
+
+      - name: Download docker-compose.yml config 
+        get_url: 
+          url : https://github.com/aquecola/docker_wireguard/releases/download/docker/docker-compose.yml
+          dest: /root
+
+      
+      - name: Deploy Docker Compose stack
+        community.docker.docker_compose:
+          project_src: /root
+          files:
+          - docker-compose.yml
