@@ -1,0 +1,28 @@
+---
+  - name: Deploy GitLab Runner
+    hosts: Linux3
+
+    tasks:
+      
+      - name: Add the official GitLab repository
+        become: True
+        shell:
+          cmd: "curl -L 'https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh' | sudo bash"
+          chdir: /root/
+     
+      - name: Install the latest version of GitLab Runner
+        apt:
+          name: "gitlab-runner"
+          state: latest
+
+      - name: "Register GitLab runner"
+        community.general.gitlab_runner:
+          api_url: https://gitlab.com//
+          api_token: "{{ glpat-XywAm24vUPoo_YuKifzL }}"
+          registration_token: GR13489416rn4v9LKNQANzb6zZkB8
+          description: Shell Runner
+          state: present
+          active: true
+          tag_list: ['test']
+          run_untagged: false
+          locked: false
