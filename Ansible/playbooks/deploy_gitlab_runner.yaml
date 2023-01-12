@@ -1,6 +1,6 @@
 ---
   - name: Deploy GitLab Runner
-    hosts: Linux3
+    hosts: Linux2
 
     tasks:
       
@@ -15,11 +15,16 @@
           name: "gitlab-runner"
           state: latest
 
+      - name: install python-gitlab
+        pip:
+          name: "python-gitlab"
+          state: latest
+
       - name: "Register GitLab runner"
         community.general.gitlab_runner:
           api_url: https://gitlab.com//
-          api_token: "{{ glpat-XywAm24vUPoo_YuKifzL }}"
-          registration_token: GR13489416rn4v9LKNQANzb6zZkB8
+          api_token: 
+          registration_token:
           description: Shell Runner
           state: present
           active: true
