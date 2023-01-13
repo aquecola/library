@@ -14,6 +14,7 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 - [DevOps Roadmap](https://roadmap.sh/devops)
 - [GitLab docs](https://docs.gitlab.com/)
 - [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/variables/index.html)
+- [Kubernetes docs](https://kubernetes.io/docs/home/)
 - [Markdown GitHub](https://github.com/GnuriaN/format-README#Ссылки)
 - [Vim cheatsheet](https://devhints.io/vim)
 - [MySQL cheatsheet](https://devhints.io/mysql)
