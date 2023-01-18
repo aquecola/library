@@ -234,7 +234,8 @@ minikube:
 
 minikube start
 minikube stop
-kubectl nodes
+kubectl get nodes
+kubectl get pods --all-namespaces
 
  #jenkins
 
