@@ -493,3 +493,9 @@ sudo systemctl restart bluetooth
 
 wg-quick up wg0
 wg-quick down wg0
+
+ #qemu
+
+virsh list - show list of virt machines
+virsh list --all - show list of virt machines even shut off
+
