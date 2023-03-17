@@ -1,6 +1,13 @@
+# Kubernetes RoadMap
+
+![image](https://user-images.githubusercontent.com/81821381/225781161-8e209853-89be-4a3d-a7f3-18036e117269.png)
+<p align="center">
+
+Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap)
+
 # Devops RoadMap
 
-![image](https://user-images.githubusercontent.com/81821381/184944608-a82549fb-f433-4d9e-88e2-1c6b4dd393e3.png)
+![image](https://user-images.githubusercontent.com/81821381/225780917-41ccf3b3-c80a-48b3-852e-82aaf4986b1c.png)
 <p align="center">
 
 Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap)
@@ -12,6 +19,7 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 # Helpful materials
   
 - [DevOps Roadmap](https://roadmap.sh/devops)
+- [Kubernetes RoadMap](https://roadmap.sh/kubernetes)
 - [GitLab docs](https://docs.gitlab.com/)
 - [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/variables/index.html)
 - [Kubernetes docs](https://kubernetes.io/docs/home/)
