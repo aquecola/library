@@ -499,3 +499,8 @@ wg-quick down wg0
 virsh list - show list of virt machines
 virsh list --all - show list of virt machines even shut off
 
+ #how to add new keyboard layouts
+
+sudo vim /etc/locale.gen
+locale-gen
+sudo locale-gen
