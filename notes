@@ -504,3 +504,22 @@ virsh list --all - show list of virt machines even shut off
 sudo vim /etc/locale.gen
 locale-gen
 sudo locale-gen
+
+ #arch install
+
+iwctl
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect SSID
+
+pacman -Syy
+pacman -S archinstall
+archinstall
+
+sudo pacman -S base-devel git
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin
+makepkg -sricCf
+paru -Syu pamac-aur
+q
