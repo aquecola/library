@@ -523,3 +523,21 @@ cd paru-bin
 makepkg -sricCf
 paru -Syu pamac-aur
 q
+
+
+ #journalctl
+
+journalctl -e - open the last msg log
+
+journalctl --vacuum-size=1G
+journalctl --vacuum-time=1day
+journalctl --vacuum-time=2weeks - clear msg log
+
+ #timeshift
+
+examples:
+
+timeshift --list
+timeshift --delete --snapshot '2023-04-01_15-04-20'
+timeshift --create --comments "after update"
+timeshift --restore --snapshot '2014-10-12_16-29-08'
