@@ -31,3 +31,4 @@ Docker/docker_prometheus_stack/grafana/grafana.db
 Docker/docker_prometheus_stack/grafana/plugins
 Docker/docker_prometheus_stack/grafana/png
 Docker/docker_prometheus_stack/grafana/provisioning
+.vscode
