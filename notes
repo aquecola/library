@@ -50,6 +50,7 @@ LA(load average) == amount of cores - OK
 dig - DNS lookup and display server answer
 dhclient  -r - get new ip from DHCP
 cat /var/log/boot.log - bootlog info
+stat -c "%a %n" go - show permission numeric
 
 usefull tools and commands:
 
