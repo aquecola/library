@@ -84,6 +84,11 @@ apt-cache policy | grep http | awk '{print $2 $3}' | sort -u - show all ppa repo
 sudo add-apt-repository $$ ppa: $$ - add repository
 /etc/apt/sources.list - all installed repositories
 
+ #yum
+
+yum repolist all - list of enabled and disabled yum repositories
+yum clean all - clear cache
+
 firewall allow port:
 
 sudo ufw enable
@@ -326,7 +331,7 @@ yum install iptables-services
 
 basic iptables configuration:
 
-ss -ntulp - show all listen ports
+
 
 iptables -nvL --line-numbers - show all rules
 iptables -A INPUT -p tcp --dport=22 -d *dest ip address* -j ACCEPT
@@ -361,6 +366,12 @@ nft -s list ruleset >> /etc/nftables.conf
 
 ip saddr *ip address* tcp dport 22 counter accept
 
+ #ss tool
+
+ss -t: show open TCP connections
+ss -u: show open UDP connections
+ss -a: show all sockets
+ss -p: show all sockets by process
 
  #zabbix installation
 
@@ -533,6 +544,13 @@ journalctl -e - open the last msg log
 journalctl --vacuum-size=1G
 journalctl --vacuum-time=1day
 journalctl --vacuum-time=2weeks - clear msg log
+journalctl -u docker - show docker log
+journalctl -t dockerd - show docker log by tag
+journalctl -p err -b -x - show error log
+journalctl --since "1 hour ago"
+journalctl --since "2 days ago"
+journalctl --since "2022-06-26 23:15:00" --until "2022-06-26 23:20:00"
+
 
  #timeshift
 
