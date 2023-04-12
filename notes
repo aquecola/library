@@ -373,6 +373,17 @@ ss -u: show open UDP connections
 ss -a: show all sockets
 ss -p: show all sockets by process
 
+ #tcpdump tool
+
+tcpdump -i <interface> tcp - show only TCP-packets
+tcpdump -i <interface> -n tcp - show only TCP-packets no DNS
+tcpdump -i <interface> -n tcp host 192.168.1.1 - show TCP-packets from IP
+
+examples:
+
+tcpdump -i ens3 -n udp port 51820
+
+
  #zabbix installation
 
 https://www.zabbix.com/ru/download?zabbix=6.2&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=mysql&ws=apache
