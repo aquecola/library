@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "What are you looking for?"
-read x
-echo "---"
+[ $# -ne 1 ] && echo "1 argument requared, got $#" && exit 1
+x=$1
 cat /home/aquecola/knowledge_progress/notes | grep $x
