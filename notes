@@ -383,102 +383,6 @@ examples:
 
 tcpdump -i ens3 -n udp port 51820
 
-
- #zabbix installation
-
-https://www.zabbix.com/ru/download?zabbix=6.2&os_distribution=ubuntu&os_version=22.04&components=server_frontend_agent&db=mysql&ws=apache
-apt install -y apache2 apt-transport-https certbot python3-certbot-apache mysql-server zabbix-server-mysql
-apt zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
-a2enmod rewrite
-vim /etc/apache2/sites-available/zabbixhabr.local.conf
-
->>
-
-<VirtualHost *:80>
-	ServerAdmin mail@examle.com #тут укажите email администратора вэб сервера
-	ServerName domenname.sample #тут укажите домен в моем случае это zabbihabr.local
-	DocumentRoot /usr/share/zabbix
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
---
-
-a2ensite newsite.conf - enable new site
-a2dissite 000-default.conf - disable old site
-apache2ctl configtest - find erros (apache)
-
-apt install mysql
-mysql_secure_installation
-mysql -u root -p
-
-mysql console:
-
-CREATE DATABASE $name of base$ CHARACTER SET utf8 COLLATE utf8_bin;
-CREATE USER '*user_name*'@'localhost' IDENTIFIED BY $pass_user$;
-GRANT ALL ON $name of base$.* TO '$user_name'@'localhost';
-FLUSH PRIVILEGES;
-quit;
-
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -u *user_name* -p *name_of_base*
-
-vim /etc/zabbix/zabbix_server.conf >>
-
-    DBHost=localhost
-
-    DBName=*data_base*
-
-    DBUser=*user_name*
-
-    DBPassword=*user_pass*
-
---
-
-vim /etc/zabbix/apache.conf - change region, if need it
-
-systemctl restart zabbix-server zabbix-agent apache2
-systemctl enable zabbix-server zabbix-agent apache2
-ip.host/setup.php - install zabbix server
-
-
- #zabbix-tg-bot
-
-https://github.com/ableev/Zabbix-in-Telegram
-https://serveradmin.ru/nastroyka-opoveshheniy-zabbix-v-telegram/
-
- #zabbix-features
-
-How to do trigger through tg-bot:
-
-1.[ITEM] Configuration >> Hosts >> Items >> Create Items >> Choose Key (for example proc.num) >> Add it and check this in "Latest data monitor"
-2.[TRIGGER] Configuration >> Hosts >> Triggers >> Create Trigger >> Add expression [Item] >> Add it
-3.[ACTIONS] Configuration >> Action >> Trigger Actions >> Add new condition
-
-DONE
-
---
-
- #mysql
-
-apt install mysql-server
-mysql_secure_installation
-
-
-mysql for zabbix:
-
-
-mysql -uroot -p
-
-CREATE DATABASE zabbix CHARACTER SET utf8 COLLATE utf8_bin;
-CREATE USER 'aquecola'@'localhost' IDENTIFIED BY 'pass';
-GRANT ALL ON zabbix.* TO 'aquecola'@'localhost';
-FLUSH PRIVILEGES;
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -u aquecola -p zabbix
-vim /etc/zabbix/zabbix_server.conf - server config for zabbix-server
-
-
----
-
  #apache2
 
 sudo a2enmod rewrite - turn on rewrite module
@@ -489,14 +393,14 @@ a2dissite - deactivate virtual host
 
  #ansible
 
-/etc/ansible/hosts
+/etc/ansible/hosts 	#ansible
 
-[linux]
+[linux]		#ansible
 
-0.0.0.0
-0.0.0.0
+0.0.0.0 	#ansible
+0.0.0.0 	#ansible
 
-[linux:vars]
+[linux:vars] #ansible
 
 ansible_user=root
 ansible_password=root
@@ -571,3 +475,7 @@ timeshift --list
 timeshift --delete --snapshot '2023-04-01_15-04-20'
 timeshift --create --comments "after update"
 timeshift --restore --snapshot '2014-10-12_16-29-08'
+
+ #mysql
+
+
