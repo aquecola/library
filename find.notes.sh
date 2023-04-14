@@ -2,4 +2,4 @@
 
 [ $# -ne 1 ] && echo "1 argument requared, got $#" && exit 1
 x=$1
-cat /home/aquecola/knowledge_progress/notes | grep $x
+cat /home/aquecola/library/notes | grep $x
