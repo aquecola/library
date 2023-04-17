@@ -203,7 +203,7 @@ docker ps -a - show all containers when started in a past
 docker rm - delete container
 docker ps -a -f status=exited
 
-docker run -it busybox sh - starting shell of current container 
+docker exec -it busybox sh - starting shell of current container 
 docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
 docker run -p 8888:80 'name' - run image on port 8888:80
 
