@@ -300,6 +300,8 @@ nmcli con add type tun/eth/etc ifname *interface*
 nmcli con mod *name* ipv4.address 0.0.0.0/0
 nmcli con mod *name* ipv4.method manual/auto (no dhcp, dhcp)
 nmcli con mod *name* ipv4.routes 0.0.0.0/0 (dst)
+nmcli dev wifi connect Hackernet password localhost22
+nmcli dev wifi list
 
  #nmap
 
@@ -475,7 +477,26 @@ timeshift --list
 timeshift --delete --snapshot '2023-04-01_15-04-20'
 timeshift --create --comments "after update"
 timeshift --restore --snapshot '2014-10-12_16-29-08'
+timeshift --snapshot-device /dev/nvme0n1p2 --list
 
  #mysql
 
+ #sway
+
+swaymsg -t get_tree
+
+ #openvpn
+
+sudo openvpn --config /path/to/your/config.ovpn
+
+ #groups
+
+groupadd docker #groups
+usermod -aG docker $USER #groups
+
+du -sh /dir
+
+ #getty@tty1.service
+
+systemctl stop getty@tty[tty_number].service
 
