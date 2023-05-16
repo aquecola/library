@@ -420,8 +420,9 @@ sudo systemctl restart bluetooth
 
  #wireguard
 
-wg-quick up wg0
-wg-quick down wg0
+wg-quick up wg0 #wireguard
+wg-quick down wg0 #wireguard
+docker exec -it wireguard /app/show-peer 2 #wireguard
 
  #qemu
 
@@ -500,3 +501,15 @@ du -sh /dir
 
 systemctl stop getty@tty[tty_number].service
 
+ #grub-menu
+
+press "e", type emergency #grub-menu
+
+ #curl features
+
+cat text.txt | curl -F 'f:1=<-' ix.io #curl features #upload text file
+curl "qrenco.de/test" #curl features #generate qr-code
+curl wttr.in #curl features #weather by ip
+curl cheat.sh/docker #curl features #good cheat.doc
+curl -F'file=@kurwa legacy.mp4' https://0x0.st #curl features #upload file 512mb
+curl -O https://0x0.st/HNJe..mp4 #curl features #download file
