@@ -30,6 +30,6 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 - [MySQL cheatsheet](https://devhints.io/mysql)
 - [Bash scripting cheatsheet](https://devhints.io/bash)
 - [Go cheatsheet](https://devhints.io/go)
-- [APACHE docs](https://httpd.apache.org/docs/2.4/)
+- [HTTP docs](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 - [NGINX docs](https://nginx.org/en/docs/)
 - [ZABBIX docs](https://www.zabbix.com/ru/manuals)
