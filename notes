@@ -495,7 +495,10 @@ sudo openvpn --config /path/to/your/config.ovpn
 groupadd docker #groups
 usermod -aG docker $USER #groups
 
-du -sh /dir
+ #storage
+
+du -sh /diri #storage
+du -hd 1 / #storage
 
  #getty@tty1.service
 
