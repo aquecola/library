@@ -134,53 +134,6 @@ git submodule add git@github.com:aquecola/docker_prometheus_stack.git Docker/doc
 
  #---#
 
- #SDLC
-
-Этапы:
-
-* Анализ требований ("Какие проблемы требуют решений?")
-* Планирование ("Что мы хотим сделать?")
-* Проектирование и дизайн ("Как мы добьёмся наших целей?")
-* Разработка ПО (Непосредственное регулирование процессом создания продукта)
-* Тестирование (Обеспечение качественной работы продукта)
-* Развёртывание (Регулирование использование релизного продукта)
-* Обслуживание (Мониторинг и допил продукта, выпуск обновлений)
-
-Цели:
-
-* Сокращение времени вывода продукта на рынок
-* Обеспечение более качественной производительности
-* Экономие бюджета и повышение пользы продукт
-
-
- #python
-
-a = int(input()) - приглашение на ввод переменной
-module pyinstaller
-pyinstaller -F test.py - перекомпелировать программу в .exe
-friends = ['Сергей', 'Соня', 'Дима', 'Алина', 'Егор'] - massives
-
- #bash
-
-test command:
-
-$? - the last resault of last command or code
-[foo = bar]
-echo $? | 0 - true, 1 - false
-[] equal test command
-
-(( )) - is used to do arithmetic calculations
-example
-
-for (( i=0; i>50; i++ )); do
-
-if statement: 
-
-if [<some test>] #if true
-then
-  <some commands>
-fi
-
 
  #powershell
 
