@@ -499,7 +499,6 @@ usermod -aG docker $USER #groups
 
 du -sh /diri #storage
 du -hd 1 / #storage
-ncdu #storage
 
  #getty@tty1.service
 
