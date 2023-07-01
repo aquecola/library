@@ -469,3 +469,11 @@ curl wttr.in #curl features #weather by ip
 curl cheat.sh/docker #curl features #good cheat.doc
 curl -F'file=@kurwa legacy.mp4' https://0x0.st #curl features #upload file 512mb
 curl -O https://0x0.st/HNJe..mp4 #curl features #download file
+
+ #partision
+
+lsblk
+sudo fdisk /dev/sdXY
+n
+mkfs.ext4 /dev/sdXY
+mount /dev/sdXY
