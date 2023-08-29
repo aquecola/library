@@ -17,7 +17,8 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 ![image](https://user-images.githubusercontent.com/81821381/188335701-68886c27-65b4-468c-ad54-b86687a1da1f.png)
   
 # Helpful materials
-  
+
+- [The Twelve-Factor App](https://12factor.net/)
 - [DevOps Roadmap](https://roadmap.sh/devops)
 - [Kubernetes RoadMap](https://roadmap.sh/kubernetes)
 - [GitLab docs](https://docs.gitlab.com/)

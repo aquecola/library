@@ -473,8 +473,21 @@ curl -O https://0x0.st/HNJe..mp4 #curl features #download file
 
  #partision
 
-lsblk
-sudo fdisk /dev/sdXY
+lsblk #partision
+sudo fdisk /dev/sdXY #partision
 n
-mkfs.ext4 /dev/sdXY
-mount /dev/sdXY
+mkfs.ext4 /dev/sdXY #partision
+mount /dev/sdXY #partision
+
+ #virtual-virsh
+
+virt-install --name myvm --ram 2048 --vcpus 2 --disk size=20 --cdrom /path/to/iso-file.iso #virtual-virsh
+virsh list --all #virtual-virsh
+virsh start myvm #virtual-virsh
+virsh shutdown myvm #virtual-virsh
+virsh destroy myvm #virtual-virsh
+virsh setmem myvm 4G --config --live --- change config memory #virtual-virsh
+virsh console myvm --- connect via ssh #virtual-virsh
+
+ #virtual-qemu
+
