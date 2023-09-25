@@ -185,9 +185,11 @@ docker swarm join-token worker #docker-swarm
 docker swarm join --token #docker-swarm
 docker node ls #docker-swarm
 docker swarm leave #docker-swarm
+docker swarm init #docker-swarm
 docker stack deploy -c /Docker/common/services/whitelables/123.yml --with-registry-auth whitelables #docker-swarm
-docker service ls # docker-swarm
-docker stack services whitelables # docker-swarm
+docker service ls #docker-swarm
+docker stack services whitelables #docker-swarm
+docker stack ls #docker-swarm
 
  #kubernetes
 
