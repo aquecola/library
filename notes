@@ -190,6 +190,7 @@ docker stack deploy -c /Docker/common/services/whitelables/123.yml --with-regist
 docker service ls #docker-swarm
 docker stack services whitelables #docker-swarm
 docker stack ls #docker-swarm
+docker node ls #docker-swarm
 
  #kubernetes
 
