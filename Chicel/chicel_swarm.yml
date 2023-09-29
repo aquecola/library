@@ -1,0 +1,61 @@
+version: '3.8'
+
+x-aliases:
+  - deploy: &deployExtraSmall
+      replicas: 1
+      update_config:
+        delay: 10m
+        order: start-first
+      rollback_config:
+        order: start-first
+      resources:
+        limits:
+          memory: 80M
+        reservations:
+          memory: 20M
+
+services:
+  server:
+    image: jpillora/chisel:latest
+    ports:
+      - "50401:8080"
+    deploy:
+      replicas: 1
+      update_config:
+        delay: 10m
+        order: start-first
+      rollback_config:
+        order: start-first
+    command: >
+      server
+      --reverse
+      --auth admin:%qFEB|JZDH%^GD046e
+      -v
+    healthcheck:
+      test: curl -sL http://127.0.0.1:8080 || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+
+  client:
+    image: jpillora/chisel:latest
+    ports:
+      - "9200:9200"     #elasticsearch
+      - "9240:9240"     # opensearch
+      - "8123:8123" # Clickhouse
+      - "20080:20080" # ConfigService
+      - "3307:3307" # mysql
+      - "50011:50011" # db122
+    deploy: *deployExtraSmall
+    command: >
+      client
+      --auth "admin:e{mMrdCS%DI~JDST%^4577mO"
+      https://connect.example.org
+      10051:192.168.4.180:10051
+      9200:192.168.4.39:9200
+      9240:192.168.4.240:9200
+      8123:192.168.4.131:8123
+      20080:192.168.4.231:20080
+      3307:192.168.4.161:3307
+      50011:192.168.4.122:1521
