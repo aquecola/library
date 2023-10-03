@@ -8,7 +8,6 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 # Devops RoadMap
 
 ![image](https://user-images.githubusercontent.com/81821381/225780917-41ccf3b3-c80a-48b3-852e-82aaf4986b1c.png)
-<p align="center">
 
 Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap)
 
