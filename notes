@@ -381,37 +381,37 @@ sudo systemctl restart bluetooth
 wg-quick up wg0 #wireguard
 wg-quick down wg0 #wireguard
 docker exec -it wireguard /app/show-peer 2 #wireguard
-systemctl status wg-quick@wg1.service
+systemctl status wg-quick@wg1.service #wireguard
 
  #qemu
 
-virsh list - show list of virt machines
-virsh list --all - show list of virt machines even shut off
+virsh list - show list of virt machines #qemu
+virsh list --all - show list of virt machines even shut off #qemu
 
- #how to add new keyboard layouts
+ #how to add new keyboard layouts arch
 
-sudo vim /etc/locale.gen
-locale-gen
-sudo locale-gen
+sudo vim /etc/locale.gen #keyboard
+locale-gen #keyboard
+sudo locale-gen #keyboard
 
  #arch install
 
-iwctl
-device list
-station wlan0 scan
-station wlan0 get-networks
-station wlan0 connect SSID
+iwctl #arch install
+device list #arch install
+station wlan0 scan #arch install
+station wlan0 get-networks #arch install
+station wlan0 connect SSID #arch install
 
-pacman -Syy
-pacman -S archinstall
-archinstall
+pacman -Syy #archinstall
+pacman -S archinstall #archinstall
+archinstall #archinstall
 
-sudo pacman -S base-devel git
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
-makepkg -sricCf
-paru -Syu pamac-aur
-q
+sudo pacman -S base-devel git #archinstall
+git clone https://aur.archlinux.org/paru-bin.git #archinstall
+cd paru-bin #archinstall
+makepkg -sricCf #archinstall
+paru -Syu pamac-aur #archinstall
+q #archinstall
 
 
  #journalctl
@@ -461,11 +461,11 @@ du -hd 1 / #storage
 
  #getty@tty1.service
 
-systemctl stop getty@tty[tty_number].service
+systemctl stop getty@tty[tty_number].service #getty
 
  #grub-menu
 
-press "e", type emergency #grub-menu
+press "e", type emergency #grub-menu-arch #systemd can't start some reason
 
  #curl features
 
@@ -509,3 +509,19 @@ winrm set winrm/config/service/auth '@{Basic="true"}'
 
 btrfs filesystem mkswapfile --size 2G swapfile #btrfs
 swapon swapfile #btrfs
+
+ #mongodb
+
+docker exec -it container_name /bin/bash # when db in docker #mongodb 
+
+mongo #mongodb
+show dbs #mongodb 
+use $db_string #mongodb 
+show collections #mongodb 
+exit #mongodb 
+
+mongodump --db your_database_name --collection collection #mongodb
+mongorestore --db your_database_name /path/to/dump # if need it #mongodb
+
+
+docker cp container_name:/dump /path/to/host/directory #mongodb
