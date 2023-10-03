@@ -7,7 +7,7 @@ Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/devel
 
 # Devops RoadMap
 
-![image](https://user-images.githubusercontent.com/81821381/225780917-41ccf3b3-c80a-48b3-852e-82aaf4986b1c.png)
+![devops-1](https://github.com/aquecola/library/assets/81821381/55ad7cdc-59b1-46cb-be3f-c26495d518fa)
 
 Source: [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap)
 
