@@ -1,0 +1,12 @@
+docker exec -it container_name /bin/bash # when db in docker 
+
+mongo
+show dbs
+use $db_string
+show collections
+exit
+
+mongodump --db your_database_name --collection collection
+mongorestore --db your_database_name /path/to/dump # if need it
+
+docker cp container_name:/dump /path/to/host/directory
