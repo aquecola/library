@@ -529,3 +529,15 @@ docker cp container_name:/dump /path/to/host/directory #mongodb
  #ssl
 
 openssl s_client -connect example.com:443 #ssl
+
+ #cpulimit
+
+cpulimit -l 10 -p 555
+
+ #OM-killer
+
+vim /etc/sysctl.conf #OM-killer
+
+vm.overcommit_memory = 2 #OM-killer
+vm.overcommit_ratio = 50 #OM-killer
+
