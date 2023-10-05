@@ -525,3 +525,7 @@ mongorestore --db your_database_name /path/to/dump # if need it #mongodb
 
 
 docker cp container_name:/dump /path/to/host/directory #mongodb
+
+ #ssl
+
+openssl s_client -connect example.com:443 #ssl
