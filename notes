@@ -540,4 +540,4 @@ vim /etc/sysctl.conf #OM-killer
 
 vm.overcommit_memory = 2 #OM-killer
 vm.overcommit_ratio = 50 #OM-killer
-
+sysctl -p #OM-killer
