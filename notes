@@ -192,14 +192,13 @@ docker stack services whitelables #docker-swarm
 docker stack ls #docker-swarm
 docker node ls #docker-swarm
 
- #kubernetes
+ #kubernetes #kubectl
 
-minikube:
-
-minikube start
-minikube stop
 kubectl get nodes
 kubectl get pods --all-namespaces
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml #install ingress nginx
+kubectl patch svc ingress-nginx-controller -p '{"spec":{"externalIPs":["192.168.4.70"]}}' #install ingress nginx
 
  #jenkins
 
@@ -541,3 +540,7 @@ vim /etc/sysctl.conf #OM-killer
 vm.overcommit_memory = 2 #OM-killer
 vm.overcommit_ratio = 50 #OM-killer
 sysctl -p #OM-killer
+
+ #how to remap keys
+
+/usr/share/X11/xkb/keycodes/evdev - change keys #how to remap keys
