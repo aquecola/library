@@ -200,6 +200,9 @@ kubectl get pods --all-namespaces
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml #install ingress nginx
 kubectl patch svc ingress-nginx-controller -p '{"spec":{"externalIPs":["192.168.4.70"]}}' #install ingress nginx
 
+kubectl get configmaps -n ingress-nginx #install ingress #get configmaps
+kubectl edit configmap ingress-nginx-controller -n ingress-nginx #install ingress #edit config-maps
+
  #jenkins
 
 installation:
