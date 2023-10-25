@@ -203,6 +203,10 @@ kubectl patch svc ingress-nginx-controller -p '{"spec":{"externalIPs":["192.168.
 kubectl get configmaps -n ingress-nginx #install ingress #get configmaps
 kubectl edit configmap ingress-nginx-controller -n ingress-nginx #install ingress #edit config-maps
 
+export KUBE_EDITOR=vim #kubectl #change default editor for kubectl
+
+kubectl create secret generic registry-cred     --from-file=.dockerconfigjson=.docker/config.json     --type=kubernetes.io/dockerconfigjson --namespace _name_ #kubectl #create secret for reg
+
  #jenkins
 
 installation:
