@@ -206,6 +206,7 @@ kubectl edit configmap ingress-nginx-controller -n ingress-nginx #install ingres
 export KUBE_EDITOR=vim #kubectl #change default editor for kubectl
 
 kubectl create secret generic registry-cred     --from-file=.dockerconfigjson=.docker/config.json     --type=kubernetes.io/dockerconfigjson --namespace _name_ #kubectl #create secret for reg
+kubectl create secret tls example.group --key example.group.key --cert fullchain.cer
 
  #jenkins
 
