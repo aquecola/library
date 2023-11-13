@@ -208,6 +208,14 @@ export KUBE_EDITOR=vim #kubectl #change default editor for kubectl
 kubectl create secret generic registry-cred     --from-file=.dockerconfigjson=.docker/config.json     --type=kubernetes.io/dockerconfigjson --namespace _name_ #kubectl #create secret for reg
 kubectl create secret tls example.group --key example.group.key --cert fullchain.cer
 
+
+ #join k8s master to cluster
+
+kubeadm token create --print-join-command #kubernetes #kubectl
+kubeadm init phase upload-certs --upload-certs #kubernetes #kubectl
+
+kubeadm join k8s.devteam.local:6443 --token 8fb1xo.ipn06cosq37lepop --discovery-token-ca-cert-hash sha256:f6cb81e7a94c4a95fed61319b888f62e7864e23999fb3946e5d7de3b91431dab  --control-plane --certificate-key 38de16b8a5d909af8399736cb1ab08c82376d0b7cf1b51811c9c38f41653b3a4 #kubectl #kubernetes
+
  #jenkins
 
 installation:
@@ -490,6 +498,16 @@ sudo fdisk /dev/sdXY #partision
 n
 mkfs.ext4 /dev/sdXY #partision
 mount /dev/sdXY #partision
+
+ #partision #add logical volumes
+
+fdisk /dev/sdX #partision #add logical volumes
+pvcreate /dev/sdXn #partision #add logical volumes #create lvm volume
+vgcreate myvg /dev/sdXn #partision #add logical volumes #create lvm group
+lvcreate -L 80G -n mylv myvg #partision #add logical volumes #create lvm partision in group, where 'mylv' - partision, myvg - group
+mkfs.ext4 /dev/myvg/mylv #partision #add logical volumes #format logical volume
+mount /dev/myvg/mylv /mnt/mylv #partision #add logical volumes #mount
+echo "/dev/myvg/mylv /mnt/mylv ext4 defaults 0 0" | sudo tee -a /etc/fstab #partision #add logical volumes #add auto-mount fstab
 
  #virtual-virsh
 
