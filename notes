@@ -155,6 +155,7 @@ docker ps - show all working containers rn
 docker ps -a - show all containers when started in a past
 docker rm - delete container
 docker ps -a -f status=exited
+docker system df - check docker df
 
 docker exec -it busybox sh - starting shell of current container 
 docker run -d -P --name static-site prakhar1989/static-site - starting web site where -d - detached mode, -P - makes open ports public
@@ -508,6 +509,8 @@ lvcreate -L 80G -n mylv myvg #partision #add logical volumes #create lvm partisi
 mkfs.ext4 /dev/myvg/mylv #partision #add logical volumes #format logical volume
 mount /dev/myvg/mylv /mnt/mylv #partision #add logical volumes #mount
 echo "/dev/myvg/mylv /mnt/mylv ext4 defaults 0 0" | sudo tee -a /etc/fstab #partision #add logical volumes #add auto-mount fstab
+vgdisplay #partision #show logical volumes
+lvdisplay #partision #show logical volumes
 
  #virtual-virsh
 
