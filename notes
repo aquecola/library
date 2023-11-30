@@ -573,3 +573,17 @@ sysctl -p #OM-killer
  #how to remap keys
 
 /usr/share/X11/xkb/keycodes/evdev - change keys #how to remap keys
+
+ #proxmox
+
+/etc/pve/corosync.conf #proxmox #nodes config
+pvecm expected 1 #proxmox #set qorum
+pvecm status #proxmox
+pvecm pvecm delnode host #proxmox
+
+vzdump 105 --dumpdir /root --mode stop #proxmox #proxmox-export-vm #make vm dump for exporting
+scp /root/vzdump-qemu-105-2021_12_10-16_47_51.vma root@192.168.99.8:/root #proxmox #proxmox-export-vm #export dump
+qmrestore /root/vzdump-qemu-105-2021_12_10-16_47_51.vma 105 -storage local-lvm #proxmox #proxmox-export-vm #restore dump
+
+qm importdisk 110 disk.vhdx local-lvm --format raw #proxmox #import
+qm importdisk 106 disk.vmdk local-lvm --format raw #proxmox #import
