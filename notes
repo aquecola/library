@@ -587,3 +587,19 @@ qmrestore /root/vzdump-qemu-105-2021_12_10-16_47_51.vma 105 -storage local-lvm #
 
 qm importdisk 110 disk.vhdx local-lvm --format raw #proxmox #import
 qm importdisk 106 disk.vmdk local-lvm --format raw #proxmox #import
+
+ #check i/o disk #checkio
+
+dd if=/dev/zero of=/tmp/testfile bs=1M count=1000 conv=fdatasync #checkio
+
+ #stress-test
+
+stress --cpu 4 --io 2 --vm 1 --vm-bytes 128M --timeout 10s #stress-test
+
+ #stress-test-network
+
+iperf -s #stress-test #stress-test-network #for server LSTN
+iperf -c #stress-test #stress-test-network #for client
+
+
+
