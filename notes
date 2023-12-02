@@ -630,3 +630,12 @@ ip neigh delete 192.168.1.1 dev eth0 #ip_tool #delete arp-record
 ip neigh add 192.168.1.1 lladdr 00:11:22:33:44:55 nud permanent dev eth0 #ip_tool #add arp-record
 
 ip route add <destination_network> via <gateway_address> dev <network_interface> #ip_tool #add-route-to-host
+vim /etc/systemd/network/static_route.network #ip_tool #make route available after reboot
+
+>
+
+[Network]
+Destination=192.168.2.0/24
+Gateway=192.168.1.1
+
+>
