@@ -592,14 +592,33 @@ qm importdisk 106 disk.vmdk local-lvm --format raw #proxmox #import
 
 dd if=/dev/zero of=/tmp/testfile bs=1M count=1000 conv=fdatasync #checkio
 
- #stress-test
+ #stress-test-cpu
 
-stress --cpu 4 --io 2 --vm 1 --vm-bytes 128M --timeout 10s #stress-test
+stress --cpu 4 --io 2 --vm 1 --vm-bytes 128M --timeout 10s #stress-test-cpu
 
  #stress-test-network
 
 iperf -s #stress-test #stress-test-network #for server LSTN
 iperf -c #stress-test #stress-test-network #for client
 
+ #stress-test-disks
 
+vim disk_stress_test.fio #stress-test-disks
+
+>
+
+[global]
+ioengine=posixaio
+runtime=1h
+time_based
+
+[disk_test]
+size=10G
+blocksize=4k
+rw=randwrite
+numjobs=8
+
+>
+
+fio disk_stress_test.fio #stress-test-disks
 
