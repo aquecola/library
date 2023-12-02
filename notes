@@ -622,3 +622,11 @@ numjobs=8
 
 fio disk_stress_test.fio #stress-test-disks
 
+ #ip_tool
+
+ip neigh show #ip_tool #show arp table
+ip neigh flush all #ip_tool #flush arp table
+ip neigh delete 192.168.1.1 dev eth0 #ip_tool #delete arp-record
+ip neigh add 192.168.1.1 lladdr 00:11:22:33:44:55 nud permanent dev eth0 #ip_tool #add arp-record
+
+ip route add <destination_network> via <gateway_address> dev <network_interface> #ip_tool #add-route-to-host
