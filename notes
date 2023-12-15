@@ -641,3 +641,11 @@ Destination=192.168.2.0/24
 Gateway=192.168.1.1
 
 >
+
+ #strace
+
+strace -fe open,openat,close,read,write,ioctl date #strace #tracing data by system calls
+
+ #mount features
+
+mount -t cifs //192.168.4.119/f$ ~/smb-192.168.4.119/ -o username=admin,password=******** #mount features #cifs #smb
