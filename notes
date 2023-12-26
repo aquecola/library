@@ -649,3 +649,25 @@ strace -fe open,openat,close,read,write,ioctl date #strace #tracing data by syst
  #mount features
 
 mount -t cifs //192.168.4.119/f$ ~/smb-192.168.4.119/ -o username=admin,password=******** #mount features #cifs #smb
+
+ #boot_fix
+
+How to access the Debian Guest VM? #boot_fix
+1. Enter exit get out of the UEFI Shell (you will come to BHYVE panel) #boot_fix
+2. Choose Boot Maintenance Manager #boot_fix
+3. (In the Boot Maintenace Manager ) Choose Boot From File #boot_fix
+4. (In File Explorer) NO VOLUME LABEL, [PciRoot(0x0)/ Pci()]  press Enter #boot_fix
+5. (Still in the File Explorer) Choose <EFI> #boot_fix
+6. (Still in the File Explorer) Choose debian #boot_fix
+7. (Still in the File Explorer) Choose grubx64.efi #boot_fix
+8. Then you will get into the system #boot_fix
+
+How can you fix it: #boot_fix
+1) Get access inside your Debian Guest VM. #boot_fix
+2) as root: cd /boot/efi/ #boot_fix
+3) mkdir -p EFI/BOOT #boot_fix
+4) cp debian/grubx64.efi EFI/BOOT/bootx64.efi #boot_fix
+5) reboot #boot_fix
+
+Basically you need to have this file in this path: #boot_fix
+/boot/efi/EFI/BOOT/bootx64.efi #boot_fix
