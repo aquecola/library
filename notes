@@ -581,6 +581,11 @@ pvecm expected 1 #proxmox #set qorum
 pvecm status #proxmox
 pvecm pvecm delnode host #proxmox
 
+
+gdisk -l /dev/zvol/rpool/data/vm-143-disk-0 #proxmox #fix bootable disk
+gdisk /dev/zvol/rpool/data/vm-143-disk-0 #proxmox #fix bootable disk
+w #proxmox #fix bootable disk
+
 vzdump 105 --dumpdir /root --mode stop #proxmox #proxmox-export-vm #make vm dump for exporting
 scp /root/vzdump-qemu-105-2021_12_10-16_47_51.vma root@192.168.99.8:/root #proxmox #proxmox-export-vm #export dump
 qmrestore /root/vzdump-qemu-105-2021_12_10-16_47_51.vma 105 -storage local-lvm #proxmox #proxmox-export-vm #restore dump
@@ -671,3 +676,7 @@ How can you fix it: #boot_fix
 
 Basically you need to have this file in this path: #boot_fix
 /boot/efi/EFI/BOOT/bootx64.efi #boot_fix
+
+ #udev_monitoring
+
+udevadm monitor -k #udev_monitoring
