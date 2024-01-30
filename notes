@@ -680,3 +680,12 @@ Basically you need to have this file in this path: #boot_fix
  #udev_monitoring
 
 udevadm monitor -k #udev_monitoring
+
+ #create_lxc_container_debian
+
+lxc-create --name=debian12 --template=download -- --dist debian --arch amd64 #create_lxc_container_debian
+configure /var/lib/lxc config, edit network section #create_lxc_container_debian
+lxc-start debian12 #create_lxc_container_debian
+lxc-ls #create_lxc_container_debian
+lxc-attach debiab12 #create_lxc_container_debian
+lxc-info -n deb-12 #create_lxc_container_debian
