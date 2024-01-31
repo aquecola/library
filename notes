@@ -164,10 +164,10 @@ docker run -p 8888:80 'name' - run image on port 8888:80
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-
 docker inspect --format='{{index .Config.Image}}' <container_id> #docker #inspect sha hash of container
 docker images --digests #docker #show images with sha hash
-
+docker tag ced98ed9e5fb11a85e3ebf43de0740163e0cc65fb5220972fbfa50d3c0dc6dce registry/link/app:0.0.171-master #docker #add tag to image
+docker push registry/link/app:0.0.171 #docker #push into registry by tag
 
  #docker-compose:
 
