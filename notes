@@ -165,6 +165,10 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 
+docker inspect --format='{{index .Config.Image}}' <container_id> #docker #inspect sha hash of container
+docker images --digests #docker #show images with sha hash
+
+
  #docker-compose:
 
 install:
