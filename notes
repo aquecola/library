@@ -693,3 +693,7 @@ lxc-start debian12 #create_lxc_container_debian
 lxc-ls #create_lxc_container_debian
 lxc-attach debiab12 #create_lxc_container_debian
 lxc-info -n deb-12 #create_lxc_container_debian
+
+ #nslookup_tool
+
+nslookup -type=mx example.com
