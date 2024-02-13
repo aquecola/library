@@ -169,6 +169,7 @@ docker images --digests #docker #show images with sha hash
 docker tag ced98ed9e5fb11a85e3ebf43de0740163e0cc65fb5220972fbfa50d3c0dc6dce registry/link/app:0.0.171-master #docker #add tag to image
 docker push registry/link/app:0.0.171 #docker #push into registry by tag
 
+
  #docker-compose:
 
 install:
@@ -188,14 +189,14 @@ docker swarm init --advertise-addr # docker-swarm
 docker swarm join-token manager #docker-swarm
 docker swarm join-token worker #docker-swarm
 docker swarm join --token #docker-swarm
-docker node ls #docker-swarm
 docker swarm leave #docker-swarm
 docker swarm init #docker-swarm
 docker stack deploy -c /Docker/common/services/whitelables/123.yml --with-registry-auth whitelables #docker-swarm
-docker service ls #docker-swarm
 docker stack services whitelables #docker-swarm
 docker stack ls #docker-swarm
 docker node ls #docker-swarm
+docker node update --availability drain 'node' #docker-swarm #cleaning node
+docker node update --availability active 'node' #docker-swarm #turn on the node
 
  #kubernetes #kubectl
 
