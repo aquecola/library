@@ -28,7 +28,6 @@ net localgroup Administrators admin /add
 
 cmd help:
 
-dir - show all files in current directory
 type - show
 rd - delete directory
 del - delete file
@@ -47,7 +46,6 @@ df -i - check inodes
 du - check memory directory
 mount
 LA(load average) == amount of cores - OK
-dig - DNS lookup and display server answer
 dhclient  -r - get new ip from DHCP
 cat /var/log/boot.log - bootlog info
 stat -c "%a %n" go - show permission numeric
@@ -162,7 +160,6 @@ docker run -d -P --name static-site prakhar1989/static-site - starting web site 
 docker run -p 8888:80 'name' - run image on port 8888:80
 
 sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 docker inspect --format='{{index .Config.Image}}' <container_id> #docker #inspect sha hash of container
 docker images --digests #docker #show images with sha hash
@@ -170,18 +167,8 @@ docker tag ced98ed9e5fb11a85e3ebf43de0740163e0cc65fb5220972fbfa50d3c0dc6dce regi
 docker push registry/link/app:0.0.171 #docker #push into registry by tag
 
 
- #docker-compose:
-
-install:
-
-COMVER=2.14.2
-curl -L "https://github.com/docker/compose/releases/download/v$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
-chmod +x /usr/bin/docker-compose
-docker-compose --version
-
 --
 
-docker-compose up -d - up all containers
 
  #docker-swarm
 
@@ -496,6 +483,7 @@ curl wttr.in #curl features #weather by ip
 curl cheat.sh/docker #curl features #good cheat.doc
 curl -F'file=@kurwa legacy.mp4' https://0x0.st #curl features #upload file 512mb
 curl -O https://0x0.st/HNJe..mp4 #curl features #download file
+curl -v telnet://127.0.0.1:22 #curl features #check port if telnet unavailiable
 
  #partision
 
@@ -698,3 +686,13 @@ lxc-info -n deb-12 #create_lxc_container_debian
  #nslookup_tool
 
 nslookup -type=mx example.com
+
+ #dig
+
+dig @8.8.8.8 example.com #dig #describe dns from 8.8.8.8 host
+dig -t mx example.com #dig #describe dns mx records
+
+ #namespaces
+
+lsns #namespaces #describe namespaces
+lsns -t net #namespaces #describe namespaces by type
