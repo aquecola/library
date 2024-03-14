@@ -505,6 +505,10 @@ echo "/dev/myvg/mylv /mnt/mylv ext4 defaults 0 0" | sudo tee -a /etc/fstab #part
 vgdisplay #partision #show logical volumes
 lvdisplay #partision #show logical volumes
 
+pvresize /dev/sdb #partision #expand_lvm
+lvextend -L +400G /dev/harbor/harbor #partision #expand_lvm
+resize2fs /dev/harbor/harbor #partision #expand_lvm
+
  #virtual-virsh
 
 virt-install --name myvm --ram 2048 --vcpus 2 --disk size=20 --cdrom /path/to/iso-file.iso #virtual-virsh
@@ -647,6 +651,7 @@ strace -fe open,openat,close,read,write,ioctl date #strace #tracing data by syst
  #mount features
 
 mount -t cifs //192.168.4.119/f$ ~/smb-192.168.4.119/ -o username=admin,password=******** #mount features #cifs #smb
+//192.168.5.99/e$/Shares/Buh/ /mnt/smb-buh cifs uid=50000,gid=50000,rw,credentials=/etc/.smbclient 0 0 #mount features #cifs #smb #/etc/fstab
 
  #boot_fix
 
