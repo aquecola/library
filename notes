@@ -701,3 +701,7 @@ dig -t mx example.com #dig #describe dns mx records
 
 lsns #namespaces #describe namespaces
 lsns -t net #namespaces #describe namespaces by type
+
+ #ssh-feature
+
+ssh -L localhost:9998:192.168.50.24:443 nginx11 #ssh-feature #ssh-proxy
