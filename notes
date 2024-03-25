@@ -705,3 +705,8 @@ lsns -t net #namespaces #describe namespaces by type
  #ssh-feature
 
 ssh -L localhost:9998:192.168.50.24:443 nginx11 #ssh-feature #ssh-proxy
+
+ #python features
+
+python3 -m venv .venv --prompt A
+source .venv/bin/activate
