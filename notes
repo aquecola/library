@@ -361,21 +361,10 @@ a2dissite - deactivate virtual host
 
  #ansible
 
-/etc/ansible/hosts 	#ansible
-
-[linux]		#ansible
-
-0.0.0.0 	#ansible
-0.0.0.0 	#ansible
-
-[linux:vars] #ansible
-
-ansible_user=root
-ansible_password=root
-
-ansible linux -m ping - using ansible
-ansible linux -a "cat /etc/os-release"
-ansible-playbook *yaml file*
+ansible test -m ping #ansible
+ansible test -m command -a uptime #ansible
+ansible test -a uptime #ansible
+ansible test -m command -a "cat /proc/cpuinfo" --become --become-user=root --ask-become-pass #ansible
 
  #bluetooth
 
@@ -523,12 +512,12 @@ virsh console myvm --- connect via ssh #virtual-virsh
 
  #winrm config for ansible
 
-set-executionpolicy -executionpolicy remotesigned #winrm
-winrm quickconfig -q
-winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="512"}'
-winrm set winrm/config '@{MaxTimeoutms="1800000"}'
-winrm set winrm/config/service '@{AllowUnencrypted="true"}'
-winrm set winrm/config/service/auth '@{Basic="true"}'
+set-executionpolicy -executionpolicy remotesigned #winrm #ansible
+winrm quickconfig -q #winrm #ansible
+winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="512"}' #winrm #ansible
+winrm set winrm/config '@{MaxTimeoutms="1800000"}' #winrm #ansible
+winrm set winrm/config/service '@{AllowUnencrypted="true"}' #winrm #ansible
+winrm set winrm/config/service/auth '@{Basic="true"}' #winrm #ansible
 
  #btrfs swap
 
