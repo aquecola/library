@@ -184,6 +184,8 @@ docker stack ls #docker-swarm
 docker node ls #docker-swarm
 docker node update --availability drain 'node' #docker-swarm #cleaning node
 docker node update --availability active 'node' #docker-swarm #turn on the node
+docker service scale my_service=1 #docker-swarm #replica
+docker service update --image 'path_to_registry' 'name_of_service' #docker-swarm #service update
 
  #kubernetes #kubectl
 
@@ -365,6 +367,8 @@ ansible test -m ping #ansible
 ansible test -m command -a uptime #ansible
 ansible test -a uptime #ansible
 ansible test -m command -a "cat /proc/cpuinfo" --become --become-user=root --ask-become-pass #ansible
+ansible-inventory --list  #ansible
+ansible-inventory --graph #ansible
 
  #bluetooth
 
@@ -507,8 +511,6 @@ virsh shutdown myvm #virtual-virsh
 virsh destroy myvm #virtual-virsh
 virsh setmem myvm 4G --config --live --- change config memory #virtual-virsh
 virsh console myvm --- connect via ssh #virtual-virsh
-
- #virtual-qemu
 
  #winrm config for ansible
 
@@ -699,3 +701,19 @@ ssh -L localhost:9998:192.168.50.24:443 nginx11 #ssh-feature #ssh-proxy
 
 python3 -m venv .venv --prompt A
 source .venv/bin/activate
+
+ #jq features
+
+[                    #jq
+  {                  #jq
+    "name": "Alice", #jq
+    "age": 30        #jq
+  },                 #jq
+  {                  #jq
+    "name": "Bob",   #jq
+    "age": 25        #jq
+  }                  #jq
+]                    #jq
+                     #jq
+                     
+cat data.json | jq '.[].name' #jq filtering
