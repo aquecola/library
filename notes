@@ -502,6 +502,12 @@ pvresize /dev/sdb #partision #expand_lvm
 lvextend -L +400G /dev/harbor/harbor #partision #expand_lvm
 resize2fs /dev/harbor/harbor #partision #expand_lvm
 
+umount /home/admin/oracle #partision #expand_lvm #part
+growpart /dev/vdc 1 #partision #expand_lvm #part
+pvresize /dev/vdc #partision #expand_lvm #part
+lvextend -L +400G /dev/oracle/oracle #partision #expand_lvm #part
+resize2fs /dev/oracle/oracle #partision #expand_lvm #part
+
  #virtual-virsh
 
 virt-install --name myvm --ram 2048 --vcpus 2 --disk size=20 --cdrom /path/to/iso-file.iso #virtual-virsh
