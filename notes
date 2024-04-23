@@ -723,3 +723,9 @@ source .venv/bin/activate #python features
                      #jq
                      
 cat data.json | jq '.[].name' #jq filtering
+
+#fly #concourse
+
+fly --target ci login --team-name main --concourse-url https://example.com #fly #concourse
+fly -t ci login -n main -u admin -p {password} #fly #concourse
+fly -t ci sp -c concourse/certificates.yml -p certificates -l ~/code/ci-resources/credentials/concourse.yml #fly #concourse
