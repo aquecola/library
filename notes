@@ -366,7 +366,7 @@ a2dissite - deactivate virtual host
 ansible test -m ping #ansible
 ansible test -m command -a uptime #ansible
 ansible test -a uptime #ansible
-ansible test -m command -a "cat /proc/cpuinfo" --become --become-user=root --ask-become-pass #ansible
+ansible test -m command -a "systemctl status zabbix-agent2" -K #ansible
 ansible-inventory --list  #ansible
 ansible-inventory --graph #ansible
 
