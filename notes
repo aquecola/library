@@ -366,7 +366,8 @@ a2dissite - deactivate virtual host
 ansible test -m ping #ansible
 ansible test -m command -a uptime #ansible
 ansible test -a uptime #ansible
-ansible test -m command -a "systemctl status zabbix-agent2" -K #ansible
+ansible test -m command -a "systemctl status zabbix-agent2" -K --become #ansible
+ansible test -m apt -a "name=sysstat state=present update_cache=yes force=yes" -K --become
 ansible-inventory --list  #ansible
 ansible-inventory --graph #ansible
 
