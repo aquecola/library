@@ -138,7 +138,9 @@ docker images --digests #docker #show images with sha hash
 docker tag ced98ed9e5fb11a85e3ebf43de0740163e0cc65fb5220972fbfa50d3c0dc6dce registry/link/app:0.0.171-master #docker #add tag to image
 docker push registry/link/app:0.0.171 #docker #push into registry by tag
 
+ #systemd docker features
 
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H fd:// --containerd=/run/containerd/containerd.sock #docker #systemd feature
 --
 
 
