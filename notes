@@ -58,7 +58,6 @@ sudo systemctl restart
 free -m - check free ram
 htop - nice tool for monitoring sys, like 'windows' task manager
 uname -a - show linux version
-wget https://git.io/vpn -O openvpn-install.sh - the fastest way for install openVPN-server through the script
 
 &> /dev/null &
 
@@ -101,34 +100,7 @@ disable secure boot in bios
 
  #git
 
-Конфигурация находится в директории "Home" на Linux, называется .gitconfig
-git init - добавить репозиторий
-git status - проверить состояние репозитория
-git add -A - добавить трекер на всю директорию
-
-git commit -m 'Add some code'
-git commit --amend - поменять текст последнего коммита
-
-git remote add origin "ссылка на репозиторий" - подключение к удалённому репозиторию
-
-git push origin master - отправка локальных изменений на сервер
-git fetch - вытаскивание данных с сервера на локальный клиент
-git pull - как я понял, делает тоже самое, что и fetch
-
-git branch - создание новой ветки/просмотр веток
-git branch -d - удаление ветки
-git checkout - переключение на другую ветку
-git merge 'название ветки' - объединение действующей с другой веткой
-
-git config pull.rebase false  # merge (the default strategy)
-git config pull.rebase true   # rebase
-git config pull.ff only       # fast-forward only 
-
-git config --edit
-git config --global --edit
-
-git submodule add git@github.com:aquecola/docker_prometheus_stack.git Docker/docker_prometheus_stack # create submodule
-
+git rebase -i HEAD~n #git #rebase last commits where n = amount of last commits
 
  #---#
 
