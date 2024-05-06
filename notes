@@ -452,6 +452,7 @@ curl cheat.sh/docker #curl features #good cheat.doc
 curl -F'file=@kurwa legacy.mp4' https://0x0.st #curl features #upload file 512mb
 curl -O https://0x0.st/HNJe..mp4 #curl features #download file
 curl -v telnet://127.0.0.1:22 #curl features #check port if telnet unavailiable
+curl -X POST https://api.telegram.org/bot${BOT}/sendMessage -d chat_id="${CHAT}" -d text="${TLG_MESS}" #curl features #request API telegram sending message
 
  #partision
 
