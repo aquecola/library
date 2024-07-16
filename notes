@@ -185,6 +185,24 @@ kubeadm init phase upload-certs --upload-certs #kubernetes #kubectl
 
 kubeadm join k8s.devteam.local:6443 --token 8fb1xo.ipn06cosq37lepop --discovery-token-ca-cert-hash sha256:f6cb81e7a94c4a95fed61319b888f62e7864e23999fb3946e5d7de3b91431dab  --control-plane --certificate-key 38de16b8a5d909af8399736cb1ab08c82376d0b7cf1b51811c9c38f41653b3a4 #kubectl #kubernetes
 
+Параметры проб: #k8s #probes
+
+    initialDelaySeconds: Время в секундах, которое Kubernetes ждет перед выполнением первой проверки после запуска контейнера. #k8s #probes
+    periodSeconds: Периодичность в секундах, с которой выполняются проверки. #k8s #probes
+    timeoutSeconds: Время в секундах, в течение которого Kubernetes ждет ответа от проверки перед ее завершением с ошибкой. #k8s #probes
+    successThreshold: Количество последовательных успешных проверок, которые необходимы для признания контейнера готовым (используется только для Readiness Probe). #k8s #probes
+    failureThreshold: Количество последовательных неуспешных проверок, которые необходимы для признания контейнера нездоровым и его перезапуска (для Liveness Probe) или исключения из обработки трафика (для Readiness Probe). #k8s #probes
+
+Startup Probe (Проверка запуска): #k8s #probes
+
+    Для долгозапускаемых приложений, чтобы дать им достаточно времени для старта, прежде чем другие пробы начнут действовать. #k8s #probes
+
+Readiness Probe (Проверка готовности): #k8s #probes
+
+    Проверяет, готов ли контейнер принимать трафик. Если проверка готовности терпит неудачу, контейнер исключается из списка доступных для обслуживания запросов. #k8s #probes
+
+
+
  #jenkins
 
 installation:
@@ -705,3 +723,10 @@ cat data.json | jq '.[].name' #jq filtering
 fly --target ci login --team-name main --concourse-url https://example.com #fly #concourse
 fly -t ci login -n main -u admin -p {password} #fly #concourse
 fly -t ci sp -c concourse/certificates.yml -p certificates -l ~/code/ci-resources/credentials/concourse.yml #fly #concourse
+
+#linux_tools
+
+du -sb /home/admin/backup/mongodb/2024-04-30/ | awk '{print "value " $1}' #linux_tools
+du -sb /home/admin/backup/mongodb/2024-04-30/ | awk '{print $1}' #linux_tools
+du -sb /home/admin/backup/mongodb/2024-04-30/ | cut -f1 #linux_tools
+
