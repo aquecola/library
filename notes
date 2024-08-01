@@ -337,9 +337,16 @@ ss -p: show all sockets by process
 
  #tcpdump tool
 
-tcpdump -i <interface> tcp - show only TCP-packets
-tcpdump -i <interface> -n tcp - show only TCP-packets no DNS
-tcpdump -i <interface> -n tcp host 192.168.1.1 - show TCP-packets from IP
+tcpdump -i <interface> tcp - show only TCP-packets #tcpdump
+tcpdump -i <interface> -n tcp - show only TCP-packets no DNS #tcpdump
+tcpdump -i <interface> -n tcp host 192.168.1.1 - show TCP-packets from IP #tcpdump
+tcpdump host <dns/ip> #tcpdump
+
+Значение флагов: #tcpdump
+
+    [S]: SYN — Инициация нового соединения. #tcpdump
+    [.]: ACK — Подтверждение получения пакета. #tcpdump
+    [S.]: SYN и ACK — Ответ на инициацию соединения с подтверждением. #tcpdump
 
 examples:
 
